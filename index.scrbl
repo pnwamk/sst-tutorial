@@ -266,8 +266,8 @@ particular kind:
 
 Set theoretic types frequently appear in type systems which
 reason about dynamically typed languages (e.g. TypeScript,
-Flow, Typed Racket, Typed Clojure), but some statically
-typed languages use them as well (e.g. CDuce, Pony, Julia).
+Flow, Typed Racket, Typed Clojure, Julia), but some statically
+typed languages use them as well (e.g. CDuce, Pony).
 
 @subsection{Subtyping}
 
