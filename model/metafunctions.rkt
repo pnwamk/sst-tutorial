@@ -94,7 +94,7 @@
   [(funapp t_a t Bot) Empty-t]
   [(funapp t_a t Arrowb)
    Empty-t
-   (side-condition (term (empty t_a)))]
+   (side-condition (OR (term (empty t_a)) or (term (empty t))))]
   [(funapp t_a t Top) t]
   [(funapp t_a t (Node (→ s_1 s_2) Arrowb_l Arrowb_m Arrowb_r))
    (t-or t_l1 (t-or t_l2 (t-or t_m t_r)))

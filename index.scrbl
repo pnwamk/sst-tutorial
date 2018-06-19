@@ -1748,7 +1748,10 @@ type). At non-trivial leaves where @rt[t_a] is not empty
 (i.e. when we're considering a set of arrows P′ which
 necessarily @emph{would} need to handle the argument) we
 return the accumulated range type (@rt[t]) for that set of
-arrows.
+arrows. Note that we can "short-circuit" the calculation
+when either of the accumulators (@rt[t] and @rt[t_a])
+are empty, which is important to keeping the complexity
+of this calculation reasonable.
 
 @section{Strategies for Testing}
 
