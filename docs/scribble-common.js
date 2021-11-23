@@ -129,7 +129,7 @@ function NormalizePath(path) {
 
 function DoSearchKey(event, field, ver, top_path) {
   var val = field.value;
-  if (event && event.keyCode == 13) {
+  if (event && event.key === 'Enter') {
     var u = GetCookie("PLT_Root."+ver, null);
     if (u == null) u = top_path; // default: go to the top path
     u += "search/index.html?q=" + encodeURIComponent(val);
@@ -145,6 +145,10 @@ function TocviewToggle(glyph, id) {
   var expand = s.display == "none";
   s.display = expand ? "block" : "none";
   glyph.innerHTML = expand ? "&#9660;" : "&#9658;";
+}
+
+function TocsetToggle() {
+  document.body.classList.toggle("tocsetoverlay");
 }
 
 // Page Init ------------------------------------------------------------------
@@ -169,12 +173,14 @@ AddOnLoad(function(){
     indicator.style.display = "block";
   });
 
-// Pressing "S" focuses on the "...search manuals..." text field
+// Pressing "S" or "s" focuses on the "...search manuals..." text field
 AddOnLoad(function(){
-  window.addEventListener("keypress", function(event) {
-    if (event && event.charCode == 115 && event.target == document.body) {
-      var field = document.getElementsByClassName("searchbox")[0];
-      field.focus();
+  window.addEventListener("keyup", function(e) {
+    if ((e.key === 's' || e.key === 'S') && e.target === document.body) {
+      var searchBox = document.getElementById('searchbox');
+      if (searchBox) {
+        searchBox.focus();
+      }
     }
   }, false);
 });

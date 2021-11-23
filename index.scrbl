@@ -26,7 +26,7 @@
 
 
 @title{Down and Dirty with Semantic Set-theoretic
- Types (a tutorial) v0.2}
+ Types (a tutorial) v0.3}
 
 @author+email["Andrew M. Kent" "pnwamk@gmail.com"]
 
@@ -1663,7 +1663,7 @@ the ranges:
 @(centered
   ($ "apply-function((" @rt[(Fun σ_1 τ_1)] " ∨ "
      @rt[(Fun σ_2 τ_2)] " ∨...), " @rt[σ] ") = "
-     @rt[τ_1] " ∨ " @rt[τ_1] " ∨ ..."))
+     @rt[τ_1] " ∨ " @rt[τ_2] " ∨ ..."))
 
 This corresponds to the logical observation that if we know
 P and that @emph{either} P implies Q @emph{or} P implies R,

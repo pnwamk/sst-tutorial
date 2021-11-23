@@ -30,6 +30,26 @@
   font-weight: bold;
 }
 
+/* Emphasis: alternate italics and normal as we nest */
+.emph {
+  font-style: italic;
+}
+.emph .emph {
+  font-style: normal;
+}
+.emph .emph .emph {
+  font-style: italic;
+}
+.emph .emph .emph .emph {
+  font-style: normal;
+}
+.emph .emph .emph .emph .emph {
+  font-style: italic;
+}
+.emph .emph .emph .emph .emph .emph {
+  font-style: normal;
+}
+
 /* ---------------------------------------- */
 
 p, .SIntrapara {
@@ -116,6 +136,10 @@ table td {
   color: #e0e0e0;
 }
 
+.navleft .tocsettoggle {
+  display: none;
+}
+
 .searchform {
   display: inline;
   margin: 0;
@@ -132,8 +156,11 @@ table td {
   padding: 0px;
   background-color: #eee;
   border: 1px solid #ddd;
-  text-align: center;
   vertical-align: middle;
+}
+
+.searchbox::placeholder {
+  text-align: center;
 }
 
 #contextindicator {
@@ -450,6 +477,10 @@ ol ol ol ol { list-style-type: upper-alpha; }
 
 .noborder img {
   border: 0;
+}
+
+.SVerbatim {
+  white-space: nowrap;
 }
 
 .SAuthorListBox {
