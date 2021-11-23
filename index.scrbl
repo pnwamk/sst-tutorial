@@ -1770,13 +1770,11 @@ convenient properties we can leverage:
   efficient algorithms which purport to perform the same
   calculation.}]
 
-@(define redex-check-url "http://docs.racket-lang.org/redex/The_Redex_Reference.html#%28form._%28%28lib._redex%2Freduction-semantics..rkt%29._redex-check%29%29")
-
 With these properties in mind, in addition to writing simple
-"unit tests" that we write entirely by hand we can use a
-tool such as @hyperlink[redex-check-url]{@tt{redex-check}}
-(inspired by QuickCheck@~cite[bib:claessen-hughes-2000]) to
-generate random types and verify our implementation respects
+"unit tests" that are written entirely by hand we can use a
+tool such as QuickCheck@~cite[bib:claessen-hughes-2000] or
+@tt{redex-check}@~cite[bib:fetscher-et-al-2015] to generate
+random types and verify our implementation respects
 well-known set properties. Additionally, we can write two
 implementations of algorithms which have both a naive and
 efficient description and feed them random input while
