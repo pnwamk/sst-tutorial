@@ -53,4 +53,9 @@
                "The 5th ACM SIGPLAN International Conference on Functional Programming (ICFP)") 
    #:date "2000"))
 
-
+(define bib:fetscher-et-al-2015
+  (make-bib
+   #:title "Making Random Judgments: Automatically Generating Well-Typed Terms from the Definition of a Type-System"
+   #:author (authors "Burke Fetscher" "Koen Claessen" "Michał Pałka" "John Hughes" "Robert Bruce Findler")
+   #:location (proceedings-location "ESOP")
+   #:date "2015"))

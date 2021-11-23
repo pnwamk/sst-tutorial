@@ -26,7 +26,7 @@
 
 
 @title{Down and Dirty with Semantic Set-theoretic
- Types (a tutorial) v0.3}
+ Types (a tutorial) v0.4}
 
 @author+email["Andrew M. Kent" "pnwamk@gmail.com"]
 
@@ -266,8 +266,8 @@ particular kind:
 
 Set theoretic types frequently appear in type systems which
 reason about dynamically typed languages (e.g. TypeScript,
-Flow, Typed Racket, Typed Clojure), but some statically
-typed languages use them as well (e.g. CDuce, Pony, Julia).
+Flow, Typed Racket, Typed Clojure, Julia), but some statically
+typed languages use them as well (e.g. CDuce, Pony).
 
 @subsection{Subtyping}
 
@@ -275,7 +275,7 @@ With set-theoretic types, the programmer (and the type
 system) must be able to reason about how types that are not
 equivalent relate. i.e., even though @rt[τ] is not the same
 type as @rt[σ], is it the case that a value of type @rt[τ]
-will necessarrily also be a value of type @rt[σ]? In other
+will necessarily also be a value of type @rt[σ]? In other
 words, does @rt[(<: τ σ)] hold (i.e. is τ a subtype of σ)?
 
 For example, consider the following subtyping question:
@@ -336,7 +336,7 @@ hold. Upsides to using a system built from rules like this
 include (1) the rules can often directly be translated into
 efficient code and (2) we can generally examine each rule
 individually and decide if the antecedants necessarily imply
-the consequent (i.e. determine if the rule valid). The
+the consequent (i.e. determine if the rule is valid). The
 downside is that such rules are incomplete for set-theoretic
 types: it is impossible to derive all valid subtyping
 judgments, e.g. we cannot conclude
@@ -360,7 +360,7 @@ subtyping is required.
 
 Instead of using a syntactic approach to reason about
 subtyping, we will instead us a semantic approach: types
-will simply denote sets values in the language in the
+will simply denote sets of values in the language in the
 expected way.
 
 @itemlist[
@@ -981,7 +981,7 @@ uninhabited.
 @subsubsection[#:tag "sec:types-as-lazy-bdds"]{Types as Lazy BDDs!}
 
 Because there is no interesting impact on inhabitation when
-computing unions, we can use "lazy" BDDs---whose unions are
+computing unions, we can use "lazy" BDDs---whose unions
 only fully expand when computing type intersection or
 difference (i.e. operations that @emph{can} have an
 interesting impact on inhabitation)---to represent our
@@ -1771,9 +1771,10 @@ convenient properties we can leverage:
   calculation.}]
 
 With these properties in mind, in addition to writing simple
-"unit tests" that we write entirely by hand we can use a
-tool such as QuickCheck@~cite[bib:claessen-hughes-2000] to
-generate random types and verify our implementation respects
+"unit tests" that are written entirely by hand we can use a
+tool such as QuickCheck@~cite[bib:claessen-hughes-2000] or
+@tt{redex-check}@~cite[bib:fetscher-et-al-2015] to generate
+random types and verify our implementation respects
 well-known set properties. Additionally, we can write two
 implementations of algorithms which have both a naive and
 efficient description and feed them random input while
