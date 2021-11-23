@@ -26,7 +26,7 @@
 
 
 @title{Down and Dirty with Semantic Set-theoretic
- Types (a tutorial) v0.3}
+ Types (a tutorial) v0.4}
 
 @author+email["Andrew M. Kent" "pnwamk@gmail.com"]
 
