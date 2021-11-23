@@ -174,7 +174,7 @@
    (node (atom n_2) (b-diff n_1 (b-or (left n_2) (mid n_2))) Bot (b-diff n_1 (b-or (right n_2) (mid n_2))))
    (judgment-holds (greater-than (atom n_1) (atom n_2)))]
   [(b-diff n_1 n_2)
-   (node (atom n_1) (b-diff (left n_1) n_2) (b-diff (mid n_1) n_2) (b-diff (right n_1) n_2))])
+   (node (atom n_1) (b-diff (left n_1) (left n_2)) (b-diff (mid n_1) (mid n_2)) (b-diff (right n_1) (right n_2)))])
 
 (define-metafunction sst
   t-and : t t -> t
